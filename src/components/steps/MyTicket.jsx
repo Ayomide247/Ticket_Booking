@@ -22,19 +22,19 @@ const MyTicket = () => {
 
         <section className=" flex flex-col items-center border-1 border-secondary rounded-2xl  p-5 bg-secondary/20 w-full">
           <section className="flex flex-col items-center">
-            <h2 className="text-[32px]">Your Ticket is Booked!</h2>
+            <h2 className="text-3xl md:text-[32px]">Your Ticket is Booked!</h2>
             <p className="text-[16px]">
               Check your email for a copy or you can{" "}
               <span className="font-bold">download</span>
             </p>
           </section>
           <section
-            class="ticket-container flex flex-col items-center max-w-full h-auto mx-auto mt-5 pt-6"
+            class="ticket-container flex flex-col items-center pt-20 max-w-full h-auto mx-auto -mt-10 md:mt-5 md:pt-6"
             ref={targetRef}
           >
-            <div className=" w-[450px] flex flex-col items-center  p-5 ">
+            <div className="flex flex-col md:items-center p-5 md:w-[450px]">
               <div
-                className="w-[75%] h-[] border- border-lightPrimar rounded-2xl p-3 md:border-1"
+                className="border- border-lightPrimary rounded-2xl md:p-3 md:w-[75%] md:border-1"
                 style={{
                   borderColor: "#24a0b5",
                 }}
@@ -53,7 +53,7 @@ const MyTicket = () => {
                         : user
                     }
                     alt="user"
-                    className="my-3 h-40 w-40 object-cover rounded-2xl border-2 border-lightPrimar mt-2 shadow-lg"
+                    className="my-3 h-24 w-40 md:h-40 md:w-40 object-cover rounded-2xl border-2 border-lightPrimar mt-2 shadow-lg"
                     style={{
                       borderColor: "#24a0b5",
                     }}
@@ -61,7 +61,7 @@ const MyTicket = () => {
                 </div>
 
                 <div
-                  className="w-full h-[43%] mx-auto p-4 bg-[#122024] rounded-2xl border border-[#2A3B3D text-whit"
+                  className="w-full mx-auto p-4 bg-[#122024] rounded-2xl border border-[#2A3B3D"
                   style={{
                     borderColor: "#2A3B3D",
                     color: "#fff",
@@ -96,7 +96,7 @@ const MyTicket = () => {
                         Email
                       </p>
                       <p
-                        className="font-bold text-whit text-[.6rem]"
+                        className="font-bold text-whit text-[.6rem] overflow-hidden"
                         style={{
                           color: "#ffffff",
                         }}
@@ -175,11 +175,11 @@ const MyTicket = () => {
                 </div>
               </div>
             </div>
-            <div className="relative top-5 md:top-12">
+            <div className="relative top-3 md:top-12">
               <img src={barCode} alt="" />
             </div>
           </section>
-          <section className="flex w-full gap-5 mt-5">
+          <section className="flex flex-col w-full gap-5 mt-5 md:flex-row">
             <button
               className="border border-secondary w-full cursor-pointer text-lightPrimary py-2 rounded-lg hover:bg-lightPrimary hover:text-pure transition ease-in duration-500 hover:scale-105"
               onClick={handleReset}

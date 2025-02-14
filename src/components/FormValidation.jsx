@@ -21,7 +21,7 @@ const FormValidation = () => {
     message: Yup.string(),
     // .required("Message is required"),
   });
-  console.log(ticketStore?.ticket);
+  // console.log(ticketStore?.ticket);
 
   const handleNext = (data) => {
     const { name, email, message } = data?.data;
@@ -51,15 +51,15 @@ const FormValidation = () => {
     },
     publicKey,
     // text: "Book Now",
-    onSuccess: () =>
-      handleNext({
-        data: {
-          name: ticketStore?.ticket?.user?.name,
-          email: ticketStore?.ticket?.user?.email,
-          message: ticketStore?.ticket?.user?.message,
-        },
-        step: 3,
-      }),
+    onSuccess: () => {
+      const data = {
+        name: ticketStore?.ticket?.user?.name,
+        email: ticketStore?.ticket?.user?.email,
+        message: ticketStore?.ticket?.user?.message,
+      };
+      console.log(data);
+      handleNext(data);
+    },
     // localStorage.clear(),
     // navigate("/"),
     // window.location.reload()
@@ -87,11 +87,27 @@ const FormValidation = () => {
             return;
           }
           setSubmitting(false);
-          if (ticketStore?.ticket?.type?.price?.toLowerCase() === "free") {
-            handleNext({ data: { ...values }, step: 3 });
-            return;
-          }
-          bookingBtnRef.current.click();
+          // if (ticketStore?.ticket?.type?.price?.toLowerCase() === "free") {
+          //   handleNext({ data: { ...values }, step: 3 });
+          //   return;
+          // }
+          // console.log(name, email, message);
+          setTicketStore((prevState) => {
+            return {
+              ...prevState,
+              formSteps: 3,
+              ticket: {
+                ...prevState.ticket,
+                user: {
+                  ...prevState.ticket.user,
+                  name,
+                  email,
+                  message,
+                },
+              },
+            };
+          });
+          // bookingBtnRef.current.click();
         }}
       >
         {({ isSubmitting, handleSubmit }) => (
