@@ -23,18 +23,18 @@ const MyTicket = () => {
         <section className=" flex flex-col items-center border-1 border-secondary rounded-2xl  p-5 bg-secondary/20 w-full">
           <section className="flex flex-col items-center">
             <h2 className="text-3xl md:text-[32px]">Your Ticket is Booked!</h2>
-            <p className="text-[16px]">
-              Check your email for a copy or you can{" "}
+            <p className="text-[16px] text-center">
+              Check your email for a copy or you can
               <span className="font-bold">download</span>
             </p>
           </section>
           <section
-            class="ticket-container flex flex-col items-center pt-20 max-w-full h-auto mx-auto -mt-10 md:mt-5 md:pt-6"
+            class="ticket-container flex flex-col items-center pt-20 max-w-full h-auto mx-auto mt-10 md:pt-6"
             ref={targetRef}
           >
             <div className="flex flex-col md:items-center p-5 md:w-[450px]">
               <div
-                className="border- border-lightPrimary rounded-2xl md:p-3 md:w-[75%] md:border-1"
+                className=" border-lightPrimary rounded-2xl p-1 md:w-[75%] border-1"
                 style={{
                   borderColor: "#24a0b5",
                 }}
@@ -175,7 +175,7 @@ const MyTicket = () => {
                 </div>
               </div>
             </div>
-            <div className="relative top-3 md:top-12">
+            <div className="relative top-10 md:top-12">
               <img src={barCode} alt="" />
             </div>
           </section>

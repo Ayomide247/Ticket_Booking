@@ -19,7 +19,7 @@ const TicketPage = () => {
   };
 
   return (
-    <div className="w-full bg-primary py-10 px-5 lg:px-48 text-[#FFFFFF] font-roa">
+    <div className="w-full bg-primary py-10 px-2 lg:px-48 text-[#FFFFFF] font-roa">
       <Navbar />
       {getCurrentForm(ticketStore?.formSteps)}
     </div>

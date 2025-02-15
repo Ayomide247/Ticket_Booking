@@ -190,7 +190,7 @@ const FormValidation = () => {
                 //   bookingBtnRef.current.click();
                 // }}
               >
-                {isSubmitting ? "Submitting..." : "Submit"}
+                {isSubmitting ? "Submitting..." : "Get Your Ticket"}
               </button>
             </section>
           </form>
